@@ -29,7 +29,7 @@ st.markdown("""
 
 @st.cache_resource
 def load_engine():
-    return HybridSearcher('EAFC_27_Complete_Controls_2.csv')
+    return HybridSearcher('EAFC_27_Complete_Controls.csv')
 
 def log_feedback(query, result_id):
     """Anonymous local logging to grow aliases."""
