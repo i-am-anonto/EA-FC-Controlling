@@ -1,0 +1,14 @@
+{
+    "1v1 vs a defender": {
+        "description": "Explosive moves to beat your man head-on.",
+        "actions": ["C045", "C052", "C060"]
+    },
+    "Pressed in the box": {
+        "description": "Create a micro-yard of space for a quick shot.",
+        "actions": ["C012", "C020"]
+    },
+    "Trapped on the wing": {
+        "description": "Change direction rapidly without losing momentum.",
+        "actions": ["C033", "C071"]
+    }
+}
