@@ -23,9 +23,7 @@ with open('situations.json', 'r') as f:
     situations = json.load(f)
 
 # Top Bar
-col_title, col_mic = st.columns([0.9, 0.1])
-col_title.title("FC 27 Companion")
-col_mic.markdown('<button onclick="startVoice()" style="background:#4CAF50; border:none; padding:10px; border-radius:50%; cursor:pointer;">🎤</button>', unsafe_allow_html=True)
+st.title("FC 27 Companion")
 
 # Situation Mode (Pills)
 selected_sit = st.pills("Situational Playbook", options=["None"] + list(situations.keys()), default="None")
