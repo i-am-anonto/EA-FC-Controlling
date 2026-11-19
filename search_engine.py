@@ -52,9 +52,10 @@ class HybridSearcher:
         # Filter by Star Rating if requested
         if min_stars:
             valid_mask = self.df['Skill_Star_Rating'].apply(
-                lambda x: int(str(x)[0]) if str(x)[0].isdigit() else 0
+                lambda x: int(str(x)[0]) if str(x) and str(x)[0].isdigit() else 0
             ) >= min_stars
             hybrid_scores = np.where(valid_mask, hybrid_scores, -1)
+            
             
         top_indices = np.argsort(hybrid_scores)[::-1][:top_k]
         return self.df.iloc[top_indices]
