@@ -7,25 +7,6 @@ from stick_parser import parse_control_string, generate_animated_svg
 
 st.set_page_config(page_title="FC 27 Playbook", layout="wide", initial_sidebar_state="collapsed")
 
-# 1. PWA & Voice Injector (Web Speech API)
-st.markdown("""
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1F2937">
-    <script>
-        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-        recognition.lang = 'en-US';
-        recognition.onresult = function(event) {
-            const txt = event.results[0][0].transcript;
-            const inputs = window.parent.document.querySelectorAll('input[type="text"]');
-            if (inputs.length > 0) {
-                let nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value").set;
-                nativeSetter.call(inputs[0], txt);
-                inputs[0].dispatchEvent(new Event('input', { bubbles: true }));
-            }
-        };
-        function startVoice() { recognition.start(); }
-    </script>
-""", unsafe_allow_html=True)
 
 @st.cache_resource
 def load_engine():
